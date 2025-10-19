@@ -1,0 +1,180 @@
+/* --- Parent wrapper to hold map --- */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 30px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 600px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Map container fills wrapper */
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* --- QR Marker --- */
+.qr-marker img {
+  transition: transform 0.2s ease;
+}
+
+.qr-marker img:hover {
+  transform: scale(1.1);
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 0.4; }
+  100% { transform: scale(0.8); opacity: 0.8; }
+}
+
+/* --- Popup Styling --- */
+.leaflet-popup-content-wrapper {
+  border-radius: 10px;
+  background-color: #f6f4f4;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-content {
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  padding: 5px 8px;
+}
+
+/* Standard Popup */
+.popup-standard {
+  max-width: 200px;
+  color: black;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Special Quest Popup */
+.popup-quest {
+  max-width: 200px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  background-color: aquamarine;
+
+}
+
+/* Custom QR popup style */
+.popup-custom {
+  background-color: #ffa500; 
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  font-family: 'Comic Sans MS', cursive, sans-serif; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.popup-custom .popup-text {
+  font-size: 24px; 
+  text-align: justify;
+}
+
+.popup-custom .popup-points {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  
+}
+
+/* Wider popup */
+
+.custom-popup .popup-card {
+  width: 360px;           
+  font-family: Arial, sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  background-color: rgb(245, 201, 120);
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e7e777;
+  color: #111010;
+  padding: 10px 12px;
+  font-weight: bold;
+  font-size: 24px;       
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.popup-text {
+  margin-bottom: 10px;
+  font-size: 24px;       
+
+
+}
+.popup-body {
+  display: flex;
+  padding: 12px;
+  flex-wrap: wrap;
+  
+}
+
+.popup-img{
+  width: 40%;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 22px;
+
+}
+
+.popup-video{
+  width: 40%;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin-left: 22px;
+  margin-right: 10px;
+  
+  
+}
+
+.popup-audio{
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  
+}
+
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .map-wrapper { height: 800px; width: 95%; margin: 20px auto; }
+  .leaflet-popup-content { font-size: 13px; }
+}
+
+@media (max-width: 600px) {
+  .map-wrapper { height: 800px; width: 100%; margin: 10px 0; border-radius: 0; }
+  .leaflet-popup-content { font-size: 12px; text-align: center; }
+  .leaflet-popup-content-wrapper { border-radius: 6px; }
+  .qr-marker img { width: 25px !important; height: 25px !important; }
+}
+
+@media (max-width: 400px) {
+  .map-wrapper { height: 600px; }
+  .leaflet-popup-content { font-size: 11px; }
+}
